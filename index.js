@@ -57,8 +57,14 @@ const run = async () => {
     const re = RegExp(regex, regexFlags);
     if (body && body.match(re)) {
         notice("Replacing regex matched content in PR body");
+        let a = body.replace(re, output);
+        let b = a.replace(/\n\n/img, '\n');
+        body = b;
+        console.log(body)
+        console.log(a)
+        console.log(b)
         // body = body.replace(re, output).replace(/\n\n/img, '\n');
-        body = 'test'
+        // body = 'test'
     } else if (body && appendContentOnMatchOnly !== "true") {
         notice("Append content to PR body");
         body += output;
