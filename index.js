@@ -58,7 +58,7 @@ const run = async () => {
     if (body && body.match(re)) {
         notice("Replacing regex matched content in PR body");
         let a = body.replace(re, output);
-        let b = a.replace(/\n\n/img, '\n');
+        let b = a.replace('\n\n', '\n');
         console.log(body)
         console.log("----------------")
         console.log(a)
