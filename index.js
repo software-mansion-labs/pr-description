@@ -70,7 +70,7 @@ const run = async () => {
         );
         return;
     }
-    body = body.replace(/\n\s*\n/g, '\n');
+    body = body.replace(/\n\n\n/g, '\n');
 
     await octokit.rest.pulls.update({
         owner,
