@@ -57,7 +57,7 @@ const run = async () => {
     const re = RegExp(regex, regexFlags);
     if (body && body.match(re)) {
         notice("Replacing regex matched content in PR body");
-        body = body.replace(re, output);
+        body = body.replace(re, output).replace(/\n\n/img, '\n');
     } else if (body && appendContentOnMatchOnly !== "true") {
         notice("Append content to PR body");
         body += output;
@@ -70,7 +70,6 @@ const run = async () => {
         );
         return;
     }
-    body = body.replace(/\n\n/img, '\n');
 
     await octokit.rest.pulls.update({
         owner,
