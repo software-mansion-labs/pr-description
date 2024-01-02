@@ -60,7 +60,7 @@ const run = async () => {
         body = body
             .replace(re, output)
             .replace(/\r\n\r\n/, '')
-            .replace(/\r\n\r\n/gm, '\n');
+            .replace(/\r\n\r\n\r\n/gm, '\n');
     } else if (body && appendContentOnMatchOnly !== "true") {
         notice("Append content to PR body");
         body += output;
