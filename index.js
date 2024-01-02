@@ -58,7 +58,7 @@ const run = async () => {
     if (body && body.match(re)) {
         notice("Replacing regex matched content in PR body");
         let a = body.replace(re, output);
-        let b = a.replaceAll(/\r\n/gm, '').replaceAll('mleko', 'dzik');
+        let b = a.replace(/\r\n\r\n/gm, '');
         console.log(body)
         console.log("----------------")
         console.log(a)
