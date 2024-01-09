@@ -74,12 +74,12 @@ const run = async () => {
         return;
     }
 
-    await octokit.rest.pulls.update({
-        owner,
-        repo,
-        body: body,
-        pull_number: prNumber,
-    });
+    // await octokit.rest.pulls.update({
+    //     owner,
+    //     repo,
+    //     body: body,
+    //     pull_number: prNumber,
+    // });
 };
 
 run().catch((error) => setFailed(error.message));
